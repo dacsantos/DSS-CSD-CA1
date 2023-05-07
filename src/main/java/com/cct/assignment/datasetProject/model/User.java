@@ -1,6 +1,7 @@
 package com.cct.assignment.datasetProject.model;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 import org.springframework.data.annotation.Id;
@@ -20,17 +21,19 @@ public class User {
 	@NotBlank
 	@Size(max = 100)
 	@Indexed(unique = true)
+	@NotEmpty(message = "username should not be empty")
 	private String username;
+	@NotEmpty(message = "Password should not be empty")
 	private String password;
 	
 	public User() {}
 
-	private User(long id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-	}
+//	private User(long id, String username, String password) {
+//		super();
+//		this.id = id;
+//		this.username = username;
+//		this.password = password;
+//	}
 
 	public long getId() {
 		return id;

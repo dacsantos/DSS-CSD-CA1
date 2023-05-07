@@ -22,7 +22,7 @@ public class LoginController {
         User user = userRepository.findByUsernameAndPassword(username, password);
         if (user != null) {
             // User found, login successful
-            return "redirect:/crudoperations"; // Redirect to the dashboard page
+            return "redirect:/crudoperations"; 
         } else {
             // Invalid credentials, login failed
             return "redirect:/login?error"; // Redirect to the login page with an error parameter

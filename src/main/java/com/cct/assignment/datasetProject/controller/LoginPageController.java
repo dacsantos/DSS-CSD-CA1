@@ -14,6 +14,6 @@ public class LoginPageController {
     @GetMapping("/")
     public String showLoginPage(Model model) {
     	 model.addAttribute("user", new User());
-        return "crudoperations"; 
+        return "loginpage"; 
     }
 }
