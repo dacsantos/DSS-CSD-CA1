@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Emissions Data</title>
+</head>
+
+<body>
+        <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Country</th>
+                <th>Total</th>
+                <th>Solid Fuel</th>
+                <th>Liquid Fuel</th>
+                <th>Gas Fuel</th>
+                <th>Cement</th>
+                <th>Gas Flaring</th>
+                <th>Per Capita</th>
+                <th>Bunker Fuels</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emission : ${emissions}">
+                <td th:text="${emission.year}"></td>
+                <td th:text="${emission.country}"></td>
+                <td th:text="${emission.total}"></td>
+                <td th:text="${emission.solidFuel}"></td>
+                <td th:text="${emission.liquidFuel}"></td>
+                <td th:text="${emission.gasFuel}"></td>
+                <td th:text="${emission.cement}"></td>
+                <td th:text="${emission.gasFlaring}"></td>
+                <td th:text="${emission.perCapita}"></td>
+                <td th:text="${emission.bunkerFuels}"></td>
+            </tr>
+        </tbody>
+    </table>
+

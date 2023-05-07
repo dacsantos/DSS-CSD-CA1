@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>CO2 Emissions per country since 1751</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="icon" type="image/x-icon" href="/img/logo (1).ico">
+
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><img src="/img/logo.png" alt=""></li>
+			<li><a href="crudoperations">CRUD Application</a></li>
+			<li><a href="emissions">Dataset</a></li>
+			<li><a href="loginpage">Exit</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h1>CO2 Emissions per country - Values are thousands metric tons of C.</h1>
+		<table id="emissionsTable">
+			<thead>
+				<tr>
+					<th>Year</th>
+					<th>Country</th>
+					<th>Total</th>
+					<th>Solid Fuel</th>
+					<th>Liquid Fuel</th>
+					<th>Gas Fuel</th>
+					<th>Cement</th>
+					<th>Gas Flaring</th>
+					<th>Per Capita</th>
+					<th>Bunker fuels</th>
+				</tr>
+			</thead>
+			<tbody id="emissionsTableContent">
+				<tr th:each="emission : ${emissions}">
+					<td th:text="${emission.year}"></td>
+					<td th:text="${emission.country}"></td>
+					<td th:text="${emission.total}"></td>
+					<td th:text="${emission.solidFuel}"></td>
+					<td th:text="${emission.liquidFuel}"></td>
+					<td th:text="${emission.gasFuel}"></td>
+					<td th:text="${emission.cement}"></td>
+					<td th:text="${emission.gasFlaring}"></td>
+					<td th:text="${emission.perCapita}"></td>
+					<td th:text="${emission.bunkerFuels}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

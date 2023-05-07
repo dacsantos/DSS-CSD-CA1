@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD Operation Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo (1).ico">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><img src="img/logo.png" alt=""></li>
+            <li><a href="crudoperations.html">CRUD Application</a></li>
+            <li><a href="datareader.html">Dataset</a></li>
+            <li><a href="loginpage.html">Exit</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>CRUD Application</h1>
+        <form id="user-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="password" placeholder="Password">
+            <button type="button" id="add-btn" onclick="addUser()">Add User</button>
+        </form>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="users-table-body">
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="form-container" id="form-container" style="display: none;">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        
+        <form id="user-form">
+            <input type="text" id="usernameedit" placeholder="Username">
+            <input type="text" id="passwordedit" placeholder="Password">
+            <button type="button" id="add-btn" onclick="updateUser()">Update User</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
