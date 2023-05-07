@@ -22,9 +22,8 @@ import com.cct.assignment.datasetProject.repository.UserRepository;
 import com.cct.assignment.datasetProject.service.SequenceGeneratorService;
 import com.cct.assignment.datasetProject.exception.ResourceNotFoundException;
 
-//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/")
 public class UserController {
 	@Autowired
 	private UserRepository userRepository;
@@ -33,7 +32,7 @@ public class UserController {
 	private SequenceGeneratorService sequenceGeneratorService;
 
 	@GetMapping("/users")
-	public List<User> getAllEmployees() {
+	public List<User> getAllUser() {
 		return userRepository.findAll();
 	}
 

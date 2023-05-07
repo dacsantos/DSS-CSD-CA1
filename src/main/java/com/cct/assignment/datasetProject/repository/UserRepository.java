@@ -7,5 +7,8 @@ import com.cct.assignment.datasetProject.model.User;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, Long> {
+	
+
+	User findByUsernameAndPassword(String username, String password);
 
 }

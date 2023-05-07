@@ -1,18 +1,20 @@
 const form = document.querySelector('form'); // Get the form element
-form.addEventListener('submit', (event) => {
+
+/*form.addEventListener('submit', (event) => {
 	event.preventDefault(); // Prevent the default form submission behavior
 	const username = document.getElementById('usernamelogin').value; // Get the username value
 	const password = document.getElementById('passwordlogin').value; // Get the password value
 
 	if (username === 'CCT' && password === '12345') {
-		window.location.href = 'crudoperations.html'; // Redirect to the CRUD operations page
+		window.location.href = 'crudoperations'; // Redirect to the CRUD operations page
 	} else {
 		alert('Invalid username or password.');
 	}
 });
+*/
 
 // Define an array to store user data
-let users = [{ username: "CCT", password: "12345" }];
+//let users = [{ username: "CCT", password: "12345" }];
 
 
 // Define a function to display user data in a table
