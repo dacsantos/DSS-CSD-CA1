@@ -14,7 +14,18 @@ const form = document.querySelector('form'); // Get the form element
 */
 
 // Define an array to store user data
-//let users = [{ username: "CCT", password: "12345" }];
+let users = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Gets users from server...
+	fetch('/users').then(response => response.json())
+	.then(data => { 
+		users = data
+		// Call the displayUsers function to show initial data
+		displayUsers();
+	})
+	.catch(error => console.error(error));
+});
 
 
 // Define a function to display user data in a table
@@ -45,11 +56,24 @@ function addUser() {
 		password: password,
 	};
 
-	// Add the user to the array
-	users.push(user);
+	fetch('/users', {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(user)
+	  })
+	  .then(response => response.json())
+	  .then(user => { 
+			users.push(user)
+			// Display the updated user data
+			displayUsers();
+		})
+	  .catch(error => console.error(error));
 
-	// Display the updated user data
-	displayUsers();
+	// Add the user to the array
+	
+
 
 	// Clear the input fields
 	document.getElementById("username").value = "";
@@ -137,8 +161,6 @@ function deleteUser(index) {
 
 
 
-// Call the displayUsers function to show initial data
-displayUsers();
 
 
 
