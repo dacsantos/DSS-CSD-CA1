@@ -25,7 +25,7 @@ public class LoginController {
             return "redirect:/crudoperations"; 
         } else {
             // Invalid credentials, login failed
-            return "redirect:/login?error"; // Redirect to the login page with an error parameter
+            return "redirect:/?error"; // Redirect to the login page with an error parameter
         }
     }
 }
