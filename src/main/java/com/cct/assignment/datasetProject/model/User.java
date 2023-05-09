@@ -11,29 +11,31 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "User")
 public class User {
-	
+
 	@Transient
 	public static final String SEQUENCE_NAME = "users_sequence";
-	
+
 	@Id
 	private long id;
-	
+
 	@NotBlank
 	@Size(max = 100)
 	@Indexed(unique = true)
 	@NotEmpty(message = "username should not be empty")
 	private String username;
+
 	@NotEmpty(message = "Password should not be empty")
 	private String password;
-	
-	public User() {}
 
-//	private User(long id, String username, String password) {
-//		super();
-//		this.id = id;
-//		this.username = username;
-//		this.password = password;
-//	}
+	public User() {
+	}
+
+	// private User(long id, String username, String password) {
+	// super();
+	// this.id = id;
+	// this.username = username;
+	// this.password = password;
+	// }
 
 	public long getId() {
 		return id;
@@ -63,8 +65,5 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
-	
-	
-	
-	
+
 }
