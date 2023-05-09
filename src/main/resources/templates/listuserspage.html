@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>CRUD Operation Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo (1).ico">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><img src="/img/logo.png" alt=""></li>
+            <li><a href="/crudoperations">CRUD Application</a></li>
+            <li><a href="/emissions">Dataset</a></li>
+            <li><a href="/">Exit</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>CRUD Application</h1>
+        <form th:action="@{/createuser}" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
+            <button type="submit">Add User</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.username}">John</td>
+                    <td th:text="${user.password}">25</td>
+                    <td>
+                        <a th:href="@{/deleteuser/{id}(id=${user.id})}">Delete</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/updateuser/{id}(id=${user.id})}">Update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--div class="form-container" id="form-container" style="display: none;">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        
+        <form id="user-form">
+            <input type="text" id="usernameedit" placeholder="Username">
+            <input type="text" id="passwordedit" placeholder="Password">
+            <button type="button" id="add-btn" onclick="updateUser()">Update User</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script-->
+</body>
+
+</html>
