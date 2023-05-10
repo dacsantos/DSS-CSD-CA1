@@ -17,15 +17,15 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/login")
+    @PostMapping("/loginpage")
     public String loginUser(@RequestParam String username, @RequestParam String password) {
         User user = userRepository.findByUsernameAndPassword(username, password);
         if (user != null) {
             // User found, login successful
-            return "redirect:/crudoperations"; 
+            return "redirect:/listuserspage"; 
         } else {
             // Invalid credentials, login failed
-            return "redirect:/?error"; // Redirect to the login page with an error parameter
+            return "redirect:/?error";
         }
     }
 }

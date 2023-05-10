@@ -27,7 +27,7 @@ public class UserPageController {
 	@Autowired
 	private SequenceGeneratorService sequenceGeneratorService;
 
-	@RequestMapping("/listusers")
+	@RequestMapping("/listuserspage")
 	public String ListUsersPage(Model model) {
 
 		var users = userRepository.findAll();
@@ -43,7 +43,7 @@ public class UserPageController {
 		user.setId(sequenceGeneratorService.generateSequence(User.SEQUENCE_NAME));
 		userRepository.save(user);
 
-		return "redirect:/listusers";
+		return "redirect:/listuserspage";
 	}
 
 	@GetMapping("/updateuser/{id}")
@@ -70,7 +70,7 @@ public class UserPageController {
 
 		userRepository.save(user);
 
-		return "redirect:/listusers";
+		return "redirect:/listuserspage";
 	}
 
 	@RequestMapping("/deleteuser/{id}")
@@ -84,6 +84,6 @@ public class UserPageController {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 
-		return "redirect:/listusers";
+		return "redirect:/listuserspage";
 	}
 }

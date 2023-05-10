@@ -30,13 +30,6 @@ public class User {
 	public User() {
 	}
 
-	// private User(long id, String username, String password) {
-	// super();
-	// this.id = id;
-	// this.username = username;
-	// this.password = password;
-	// }
-
 	public long getId() {
 		return id;
 	}

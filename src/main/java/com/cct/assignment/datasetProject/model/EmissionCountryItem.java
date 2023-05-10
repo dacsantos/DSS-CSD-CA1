@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "emissionsByCountry")
-public class Emission {
+public class EmissionCountryItem {
 
     @Id
     private String id;

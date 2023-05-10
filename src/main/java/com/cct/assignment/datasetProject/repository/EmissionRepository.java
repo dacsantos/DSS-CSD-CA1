@@ -5,10 +5,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cct.assignment.datasetProject.model.Emission;
+import com.cct.assignment.datasetProject.model.EmissionCountryItem;
 
 @Repository
-public interface EmissionRepository extends MongoRepository<Emission, String> {
-	Page<Emission> findAll(Pageable pageable);
+public interface EmissionRepository extends MongoRepository<EmissionCountryItem, String> {
+	Page<EmissionCountryItem> findAll(Pageable pageable);
 }
 
