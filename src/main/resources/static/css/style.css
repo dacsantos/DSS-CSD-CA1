@@ -1,6 +1,10 @@
+/* Styles for the body */
+
 body {
     margin: 0;
 }
+
+/* Styles for images */
 
 img {
     width: 45px;
@@ -8,6 +12,7 @@ img {
     padding: 5px;
 }
 
+/* Styles for the container */
 
 .container {
     width: 80%;
@@ -15,10 +20,14 @@ img {
     text-align: center;
 }
 
-h1,h3 {
+/* Styles for heading elements */
+
+h1, h3 {
     margin-top: 50px;
-    color:purple;
+    color: purple;
 }
+
+/* Styles for text input */
 
 input[type="text"] {
     width: 30%;
@@ -27,6 +36,8 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/* Styles for buttons */
 
 button[type="button"] {
     padding: 10px 20px;
@@ -41,27 +52,36 @@ button[type="button"]:hover {
     background-color: rgba(128, 0, 128, 0.493);
 }
 
+/* Styles for tables */
+
 table {
     width: 100%;
     margin-top: 50px;
     border-collapse: collapse;
 }
 
-th,
-td {
+/* Styles for table header and data cells */
+
+th, td {
     padding: 10px;
     text-align: left;
     border: 2px solid #ddd;
 }
+
+/* Styles for table header */
 
 th {
     background-color: purple;
     color: white;
 }
 
+/* Styles for last data cell in each row */
+
 td:last-child {
     text-align: left;
 }
+
+/* Styles for action buttons */
 
 .action-btn {
     padding: 5px;
@@ -73,6 +93,8 @@ td:last-child {
     cursor: pointer;
 }
 
+/* Styles for the form container */
+
 .form-container {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -83,6 +105,8 @@ td:last-child {
     margin-bottom: 50px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
+
+/* Styles for the close button */
 
 .close-btn {
     color: #aaa;
@@ -98,10 +122,7 @@ td:last-child {
     cursor: pointer;
 }
 
-
-
-
-
+/* Styles for the navigation menu */
 
 ul {
     list-style-type: none;
@@ -121,21 +142,22 @@ li a {
     text-align: center;
     padding: 20px;
     text-decoration: none;
-
-
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Styles for the navigation menu on hover */
+
 li a:hover {
     background-color: rgba(255, 255, 255, 0.347);
 }
 
+/* Styles for error messages */
+
 .error-message {
-  color: red;
-  margin-bottom: 10px;
+    color: red;
+    margin-bottom: 10px;
 }
 
 .error {
-  color: red;
-  font-size: 12px;
+    color: red;
+    font-size: 12px;
 }

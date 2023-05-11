@@ -15,9 +15,10 @@ public class EmissionController {
 
     @Autowired
     private EmissionRepository emissionRepository;
- 
+    // Displays the emissions page
     @GetMapping("/emissions")
     public String getEmissions(Model model) {
+    	// Retrieve all emission data from the repository and add to the model
         List<EmissionCountryItem> emissions = emissionRepository.findAll();
         model.addAttribute("emissions", emissions);
         return "emissions";

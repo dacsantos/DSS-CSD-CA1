@@ -11,6 +11,7 @@ import com.cct.assignment.datasetProject.model.User;
 @RequestMapping("/")
 public class LoginPageController {
     
+	// Displays the login page
     @GetMapping("/")
     public String showLoginPage(Model model) {
     	 model.addAttribute("user", new User());

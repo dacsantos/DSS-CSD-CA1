@@ -9,6 +9,7 @@ import com.cct.assignment.datasetProject.model.EmissionCountryItem;
 
 @Repository
 public interface EmissionRepository extends MongoRepository<EmissionCountryItem, String> {
+	
+	//Retrieves all emission country items with pagination support
 	Page<EmissionCountryItem> findAll(Pageable pageable);
 }
-

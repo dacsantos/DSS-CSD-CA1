@@ -23,6 +23,12 @@ public class SequenceGeneratorService {
 		this.mongoOperations = mongoOperations;
 	}
 
+	/**
+	 * Generates the next sequence value for the given sequence name.
+	 *
+	 * @param seqName the name of the sequence
+	 * @return the next sequence value
+	 */
 	public long generateSequence(String seqName) {
 
 		DatabaseSequence counter = mongoOperations.findAndModify(query(where("_id").is(seqName)),

@@ -12,10 +12,17 @@ import com.cct.assignment.datasetProject.repository.EmissionRepository;
 public class EmissionService {
 	private final EmissionRepository emissionRepository;
 
+
 	public EmissionService(EmissionRepository emissionsByCountryRepository) {
 		this.emissionRepository = emissionsByCountryRepository;
 	}
 
+	/**
+	 * Retrieves a page of emission country items.
+	 *
+	 * @param pageNumber the page number
+	 * @return a page of emission country items
+	 */
 	public Page<EmissionCountryItem> findPage(int pageNumber) {
 		Pageable pageable = PageRequest.of(pageNumber - 1, 5);
 		return emissionRepository.findAll(pageable);

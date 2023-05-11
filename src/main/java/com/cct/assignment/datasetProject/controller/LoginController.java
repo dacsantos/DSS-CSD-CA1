@@ -17,6 +17,7 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
+    // Method that processes the login form submission
     @PostMapping("/loginpage")
     public String loginUser(@RequestParam String username, @RequestParam String password) {
         User user = userRepository.findByUsernameAndPassword(username, password);

@@ -10,20 +10,30 @@ import com.cct.assignment.datasetProject.repository.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
-	public User saveOrUpdate(User user) {
-		return userRepository.save(user) ;
-		
-	}
-	
 
-	public List<User> findAll(){
-		
+	/**
+	 * Saves or updates the user in the database.
+	 *
+	 * @param user the user to be saved or updated
+	 * @return the saved or updated user
+	 */
+	public User saveOrUpdate(User user) {
+		return userRepository.save(user);
+
+	}
+
+	/**
+	 * Retrieves all users from the database.
+	 *
+	 * @return a list of all users
+	 */
+	public List<User> findAll() {
+
 		return userRepository.findAll();
-		
+
 	}
 
 }
