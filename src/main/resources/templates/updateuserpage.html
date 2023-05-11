@@ -2,40 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Edit user</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="icon" type="image/x-icon" href="/img/logo (1).ico">
+<title>Edit user</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="icon" type="image/x-icon" href="/img/logo (1).ico">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><img src="/img/logo.png" alt=""></li>
-            <li><a href="/listuserspage">Edit user details</a></li>
-            <li><a href="/emissions">Dataset</a></li>
-            <li><a href="/">Exit</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h1>CRUD Application</h1>
+	<nav>
+		<ul>
+			<li><img src="/img/logo.png" alt=""></li>
+			<li><a href="/listuserspage">Users list </a></li>
+			<li><a href="/emissions">Dataset</a></li>
+			<li><a href="/">Exit</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h1>Change your details</h1>
 
-        <form th:action="@{/updateuser}" method="post" th:object="${user}">
-            <input type="hidden" th:field="${user.id}">
-            
-			<div class="form-group">
-				<input required="" th:field="${user.username}">
-				<label for="username">Username</label>
-			</div>
-			<div class="form-group">
-				<input required="" th:field="${user.password}">
-                <label for="passwordlogin">Password</label>
-			</div>
+		<form th:action="@{/updateuser}" method="post" th:object="${user}">
+			<input type="hidden" th:field="${user.id}">
 
-			<button type="submit" class="btn">Update</button>
+			<div class="form-group">
+				<label for="username">Username</label> <input required
+					th:field="${user.username}">
+
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="passwordlogin">Password</label> <input required
+					th:field="${user.password}">
+			</div>
+			<br>
+			<button type="submit" class="confirmChanges">Save</button>
+			<button onclick="goBack()">Back</button>
 		</form>
-
-    </div>  
+	</div>
+	<script src="/js/script.js"></script>
 </body>
 
 </html>

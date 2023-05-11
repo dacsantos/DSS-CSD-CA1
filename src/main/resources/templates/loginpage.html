@@ -16,11 +16,11 @@
 		</div>
 		<form th:action="@{/listuserspage}" method="post" th:object="${user}">
 			<div class="form-group">
-				<input id="usernamelogin" required="" th:field="${user.username}">
+				<input id="usernamelogin" required th:field="${user.username}">
 				<label for="username">Username</label>
 			</div>
 			<div class="form-group">
-				<input type="password" id="passwordlogin" required=""
+				<input type="password" id="passwordlogin" required
 					th:field="${user.password}"> <label for="password">Password</label>
 			</div>
 
@@ -28,7 +28,6 @@
 		</form>
 
 	</div>
-	<script src="js/script.js"></script>
 </body>
 
 </html>
