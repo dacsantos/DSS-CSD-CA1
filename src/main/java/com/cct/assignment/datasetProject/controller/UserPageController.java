@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +39,18 @@ public class UserPageController {
 
 	// Method to create a new user, save to repository, and redirect to the list of users page
 	@PostMapping("/createuser")
-	public String CreateUser(@Valid @ModelAttribute User user) {
+	public String CreateUser(@Valid @ModelAttribute User user, BindingResult bindingResult, Model model) {
+		 // Check if there are validation errors
+		if (bindingResult.hasErrors()) {
+	        // Add the validation errors to the model
+	        model.addAttribute("errors", bindingResult.getFieldErrors());	        
+	        // Add the user object back to the model to populate the form fields
+	        model.addAttribute("user", user);	        
+	        // Add an error message to the model
+	        model.addAttribute("errorMessage", "Please correct the errors and try again.");	        
+	        // Return the same page for the user to try again
+	        return "redirect:/listuserspage";
+	    }
 		user.setId(sequenceGeneratorService.generateSequence(User.SEQUENCE_NAME));
 		userRepository.save(user);
 		
